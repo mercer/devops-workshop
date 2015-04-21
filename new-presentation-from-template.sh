@@ -8,4 +8,4 @@ fi
 
 PRESENTATION_NAME=$1
 
-cp -r template $PRESENTATION_NAME
+cp -r welcome $PRESENTATION_NAME
