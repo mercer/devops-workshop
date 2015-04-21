@@ -2,7 +2,7 @@
 set -e
 
 if [ -z "$1" ]; then
-    GH_PAGES='../devops-training-dist'
+    GH_PAGES='../devops-workshop-dist'
 else
     GH_PAGES=$1
 fi
