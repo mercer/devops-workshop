@@ -454,8 +454,49 @@ $ curl --silent localhost:8080
 						</code></pre>
 					</section>
 					<section>
+						<h2>now let's do that again</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant up
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080
+						</code></pre>
+					</section>
+					<section>
 						<h2>now you know what provision means</h2>
 						<img src="images/confident.gif"/>
+					</section>
+					<section>
+						<h2>let's do that in the cloud</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant plugin install vagrant-digitalocean
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+Vagrant.configure("2") do |config|
+  # ...
+  config.vm.provider :digital_ocean do |digital_ocean, override|
+    digital_ocean.token = ENV['VAGRANT_DIGITALOCEAN_TOKEN']
+    digital_ocean.image = "ubuntu-14-04-x64"
+    digital_ocean.region = "ams2"
+    digital_ocean.size = "512mb"
+
+    override.vm.box = "digital_ocean"
+    override.vm.box_url = 
+      "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+    override.ssh.username = "ubuntu"
+    override.ssh.private_key_path = "~/.ssh/id_rsa"
+  end
+end
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant up --provider=digital_ocean
+						</code></pre>
 					</section>
 				</section>
 
