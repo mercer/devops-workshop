@@ -165,7 +165,7 @@ $ curl --silent localhost:8080 | perl -ne 'print if $. == 1'
 				<section>
 					<section><h2>going to production</h2></section>
 					<section>
-						<h2>build a distribution</h2>
+						<h2>build</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ gulp
 [09:42:44] Using gulpfile ~/Dropbox/Projects/todomvc/gulpfile.js
@@ -194,7 +194,7 @@ CNAME bower_components/ examples/ index.html learn.json main.min.css main.min.js
 						</code></pre>
 					</section>
 					<section>
-						<h2>vagrant up</h2>
+						<h2>start a virtual machine</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant init ubuntu/trusty64
 						</code></pre>
@@ -332,9 +332,132 @@ $ curl localhost:8080
 &lt;!doctype html>
 						</code></pre>
 					</section>
+					<section>
+						<h2>let's do that again</h2>
+						<img src="images/Tom-Colicchio-WTF-Reaction-Gif-On-Top-Chef.gif"/>
+					</section>
+					<section>
+						<h2>let's automate then</h2>
+						<img src="images/come-here.gif"/>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
+						</code></pre>
+					</section>
+					<section>
+						<h2>nginx with puppet</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant up
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+// manifests/default.pp
+package { "nginx":
+    ensure => installed
+}
 
+service { "nginx":
+    require => Package["nginx"],
+    ensure => running,
+    enable => true
+}
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant ssh
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ sudo puppet apply /vagrant/manifests/default.pp
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl localhost:80
+						</code></pre>
+					</section>
+					<section>
+						<h2>remove existing configuration</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+// manifests/default.pp
+file { "/etc/nginx/sites-enabled/default":
+    require => Package["nginx"],
+    ensure  => absent,
+    notify  => Service["nginx"]
+}
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ sudo puppet apply manifests/default.pp
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl localhost:80
+						</code></pre>
+					</section>
+					<section>
+						<h2>add new configuration</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+// manifests/default.pp
+file { "/vagrant/dist":
+    ensure => "directory"
+}
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+file { "/etc/nginx/sites-available/todomvc":
+    require => [
+        Package["nginx"],
+        File["/vagrant/dist"]
+    ],
+    ensure => "file",
+    content => 
+        "server {
+            listen 80 default_server;
+            server_name _;
+            location / { root /vagrant/dist; }
+        }",
+    notify => Service["nginx"]
+}
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+file { "/etc/nginx/sites-enabled/todomvc":
+    require => File["/etc/nginx/sites-available/todomvc"],
+    ensure => "link",
+    target => "/etc/nginx/sites-available/todomvc",
+    notify => Service["nginx"]
+}
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ sudo puppet apply manifests/default.pp
+						</code></pre>
+					</section>
+					<section>
+						<h2>automate the apply step</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+Vagrant.configure("2") do |config|
+  config.vm.provision "puppet"
+end
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant up
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+==> default: Running provisioner: puppet...
+==> default: Running Puppet with default.pp...
+==> default: stdin: is not a tty
+==> default: Warning: Could not retrieve fact fqdn
+==> default: Notice: Compiled catalog for vagrant-ubuntu-trusty-64 in environment production in 0.21 seconds
+==> default: Notice: /Stage[main]/Main/Package[nginx]/ensure: ensure changed 'purged' to 'present'
+==> default: Notice: /Stage[main]/Main/File[/etc/nginx/sites-available/todomvc]/ensure: defined content as '{md5}d7f46245a21721bb4b8c169ff8a53354'
+==> default: Notice: /Stage[main]/Main/File[/etc/nginx/sites-enabled/default]/ensure: removed
+==> default: Notice: /Stage[main]/Main/File[/etc/nginx/sites-enabled/todomvc]/ensure: created
+==> default: Notice: /Stage[main]/Main/Service[nginx]: Triggered 'refresh' from 3 events
+==> default: Notice: Finished catalog run in 15.13 seconds
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080
+						</code></pre>
+					</section>
+					<section>
+						<h2>now you know what provision means</h2>
+						<img src="images/confident.gif"/>
+					</section>
 				</section>
-
 
 				<section>
 					<section data-background="images/the-stars-like-dust.jpg"><h2>the stars like dust</h2></section>
