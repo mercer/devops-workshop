@@ -53,20 +53,26 @@
 					<h1>infrastructure as code</h1>
 				</section>
 				<section>
-					<section><h2>setup</h2></section>
-					<section><h2>open a console</h2></section>
+					<section><h2>development machine</h2></section>
 					<section>
 						<h2>install a package manager</h2>
 						<ul>
-							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a></li>
 							<li><i class="fa fa-windows"></i> <a href="https://chocolatey.org/">chocolatey</a></li>
-							<li><i class="fa fa-linux"></i> no need</li>
+							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a></li>
+						</ul>
+					</section>
+					<section><h2>open a console</h2></section>
+					<section>
+						<h2>install a better console</h2>
+							<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install conemu</code></pre>
+							<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install iterm2</code></pre>
 						</ul>
 					</section>
 					<section>
 						<h2>install git</h2>
-						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install git</code></pre>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install git</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install git</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install git</code></pre>
 						<pre><code data-trim contenteditable>
 $ git --version
 git version 1.9.4.msysgit.2
@@ -74,8 +80,17 @@ git version 1.9.4.msysgit.2
 					</section>
 					<section>
 						<h2>install node.js</h2>
-						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install nodejs</code></pre>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install nodejs</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install nodejs</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install nodejs</code></pre>
+						<pre><code data-trim contenteditable>
+$ node --version
+v0.12.2
+						</code></pre>
+						<pre><code data-trim contenteditable>
+$ npm --version
+2.7.5
+						</code></pre>
 					</section>
 					<section>
 						<h2>install bower</h2>
@@ -94,10 +109,32 @@ $ gulp --version
 						</code></pre>
 					</section>
 					<section>
-						<h2>fetch todomvc</h2>
-						<pre></i><code data-trim contenteditable>$ git clone git@github.com:tastejs/todomvc.git</code></pre>
-						<pre></i><code data-trim contenteditable>$ npm install</code></pre>
-						<pre></i><code data-trim contenteditable>$ bower install</code></pre>
+						<h2>clone and serve todomvc</h2>
+						<pre class="fragment"><code data-trim contenteditable>$ git clone git@github.com:tastejs/todomvc.git</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ cd todomvc</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ npm install</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ bower install</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ gulp serve
+[08:05:18] Using gulpfile ~/Dropbox/Projects/todomvc/gulpfile.js
+[08:05:18] Starting 'serve'...
+[08:05:18] Finished 'serve' after 3.28 ms
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | awk 'NR == 1'
+&lt;!doctype html>
+
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | sed '1q;d'
+&lt;!doctype html>
+
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | perl -ne 'print if $. == 1'
+&lt;!doctype html>
+
+						</code></pre>
 					</section>
 				</section>
 				<section>
