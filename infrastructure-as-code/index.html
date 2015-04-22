@@ -153,21 +153,21 @@ $ gulp serve
 [08:05:18] Finished 'serve' after 3.28 ms
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080
+$ curl --silent localhost:8888
 &lt;!doctype html>
 ...
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080 | awk 'NR == 1'
+$ curl --silent localhost:8888 | awk 'NR == 1'
 &lt;!doctype html>
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080 | sed '1q;d'
+$ curl --silent localhost:8888 | sed '1q;d'
 &lt;!doctype html>
 
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080 | perl -ne 'print if $. == 1'
+$ curl --silent localhost:8888 | perl -ne 'print if $. == 1'
 &lt;!doctype html>
 
 						</code></pre>
@@ -303,7 +303,7 @@ $ vagrant halt
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.network :forwarded_port, host: 8080, guest: 80
+  config.vm.network :forwarded_port, host: 8888, guest: 80
 end
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
@@ -311,16 +311,16 @@ $ vagrant up
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
 ==> default: Forwarding ports...
-    default: 80 => 8080 (adapter 1)
+    default: 80 => 8888 (adapter 1)
     default: 22 => 2222 (adapter 1)
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl localhost:8080
+$ curl localhost:8888
 &lt;!doctype html>
 						</code></pre>
 					</section>
 					<section>
-						<h2>serve static content with nginx</h2>
+						<h2>deploy app on nginx</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant ssh
 						</code></pre>
@@ -339,7 +339,7 @@ logout
 Connection to 127.0.0.1 closed.
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl localhost:8080
+$ curl localhost:8888
 &lt;!doctype html>
 						</code></pre>
 					</section>
@@ -461,7 +461,7 @@ $ vagrant up
 ==> default: Notice: Finished catalog run in 15.13 seconds
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080
+$ curl --silent localhost:8888
 						</code></pre>
 					</section>
 					<section>
@@ -473,7 +473,7 @@ $ vagrant destroy
 $ vagrant up
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8080
+$ curl --silent localhost:8888
 						</code></pre>
 					</section>
 					<section>
