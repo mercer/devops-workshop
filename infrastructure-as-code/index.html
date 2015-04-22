@@ -14,6 +14,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+	<link rel="stylesheet" href="plugin/font-awesome-4.3.0/css/font-awesome.css">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
@@ -37,23 +38,8 @@
 			section[data-background] h1, section[data-background] h3 {
 				text-shadow: 2px 2px 30px rgba(55, 18, 0, 1);
 			}
-			.reveal strong {
-				color: green; 
-			}
-			.reveal .orange {
-				color: orange; 
-			}
-			.reveal .red {
-				color: red; 
-			}
 			.reveal .green {
 				color: green; 
-			}
-			.reveal .purple {
-				color: purple; 
-			}
-			.reveal .yellow {
-				color: yellow; 
 			}
 		</style>
 
@@ -67,14 +53,92 @@
 					<h1>infrastructure as code</h1>
 				</section>
 				<section>
-					<section data-background="images/the-stars-like-dust.jpg"><h2>the stars like dust</h2></section>
+					<section><h2>development machine</h2></section>
+					<section>
+						<h2>install a package manager</h2>
+						<ul>
+							<li><i class="fa fa-windows"></i> <a href="https://chocolatey.org/">chocolatey</a></li>
+							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a></li>
+						</ul>
+					</section>
 					<section><h2>open a console</h2></section>
 					<section>
-						<h2>vagrant up</h2>
-						<pre><code data-trim contenteditable class="no-highlight">
-$ vagrant up
-						</code></pre>						
+						<h2>install a better console</h2>
+							<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install conemu</code></pre>
+							<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install iterm2</code></pre>
+						</ul>
 					</section>
+					<section>
+						<h2>install git</h2>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install git</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install git</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install git</code></pre>
+						<pre><code data-trim contenteditable>
+$ git --version
+git version 1.9.4.msysgit.2
+						</code></pre>
+					</section>
+					<section>
+						<h2>install node.js</h2>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install nodejs</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install nodejs</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install nodejs</code></pre>
+						<pre><code data-trim contenteditable>
+$ node --version
+v0.12.2
+						</code></pre>
+						<pre><code data-trim contenteditable>
+$ npm --version
+2.7.5
+						</code></pre>
+					</section>
+					<section>
+						<h2>install bower</h2>
+						<pre><code data-trim contenteditable>$ npm install --global bower</code></pre>
+						<pre><code data-trim contenteditable>
+$ bower --version
+1.4.1
+						</code></pre>
+					</section>
+					<section>
+						<h2>install gulp</h2>
+						<pre><code data-trim contenteditable>$ npm install --global gulp</code></pre>
+						<pre><code data-trim contenteditable>
+$ gulp --version
+1.4.1
+						</code></pre>
+					</section>
+					<section>
+						<h2>clone and serve todomvc</h2>
+						<pre class="fragment"><code data-trim contenteditable>$ git clone git@github.com:tastejs/todomvc.git</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ cd todomvc</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ npm install</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ bower install</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ gulp serve
+[08:05:18] Using gulpfile ~/Dropbox/Projects/todomvc/gulpfile.js
+[08:05:18] Starting 'serve'...
+[08:05:18] Finished 'serve' after 3.28 ms
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | awk 'NR == 1'
+&lt;!doctype html>
+
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | sed '1q;d'
+&lt;!doctype html>
+
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl --silent localhost:8080 | perl -ne 'print if $. == 1'
+&lt;!doctype html>
+
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-background="images/the-stars-like-dust.jpg"><h2>the stars like dust</h2></section>
 				</section>
 				<section>
 					<section>
