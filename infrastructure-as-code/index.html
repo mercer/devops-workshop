@@ -53,7 +53,11 @@
 					<h1>infrastructure as code</h1>
 				</section>
 				<section>
-					<section><h2>development machine</h2></section>
+					<section><h2>development environment</h2></section>
+					<section>
+						<h2>this is your first day at work</h2>
+						<h3 class="fragment">let's fetch the app and make it work</h3>
+					</section>
 					<section data-background="images/todomvc-home.png"></section>
 					<section>
 						<h2>install a package manager</h2>
@@ -62,16 +66,20 @@
 							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a> and <a href="http://caskroom.io/">Cask</a></li>
 						</ul>
 					</section>
-					<section><h2>open a console</h2></section>
 					<section>
-						<h2>install a better console</h2>
-							<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install conemu</code></pre>
+						<h2>install a (good) terminal emulator</h2>
+							<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install conemu -y</code></pre>
 							<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install iterm2</code></pre>
+						</ul>
+					</section>
+						<h2>install a (good) text editor</h2>
+							<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install sublimetext3 -y</code></pre>
+							<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew cask install sublime-text3</code></pre>
 						</ul>
 					</section>
 					<section>
 						<h2>install virtualbox</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install virtualbox</code></pre>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install virtualbox -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install virtualbox</code></pre>
 						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install virtualbox</code></pre>
 						<pre><code data-trim contenteditable>
@@ -81,7 +89,7 @@ Oracle VM VirtualBox Manager 4.3.24
 					</section>
 					<section>
 						<h2>install curl</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install curl</code></pre>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install curl -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install curl</code></pre>
 						<pre><code data-trim contenteditable>
 $ curl --version
@@ -92,7 +100,7 @@ Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM SPNEGO SSL SSPI libz
 					</section>
 					<section>
 						<h2>install vagrant</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install vagrant</code></pre>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install vagrant -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install vagrant</code></pre>
 						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install vagrant</code></pre>
 						<pre><code data-trim contenteditable>
@@ -102,7 +110,7 @@ Vagrant 1.6.5
 					</section>
 					<section>
 						<h2>install git</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install git</code></pre>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install git -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install git</code></pre>
 						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install git</code></pre>
 						<pre><code data-trim contenteditable>
@@ -112,7 +120,7 @@ git version 1.9.4.msysgit.2
 					</section>
 					<section>
 						<h2>install node.js</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install nodejs</code></pre>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install nodejs -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install nodejs</code></pre>
 						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install nodejs</code></pre>
 						<pre><code data-trim contenteditable>
@@ -172,9 +180,6 @@ $ curl --silent localhost:8888 | perl -ne 'print if $. == 1'
 
 						</code></pre>
 					</section>
-				</section>
-				<section>
-					<section><h2>going to production</h2></section>
 					<section>
 						<h2>build</h2>
 						<pre class="fragment"><code data-trim contenteditable>
@@ -203,6 +208,12 @@ $ gulp
 $ ls dist
 CNAME bower_components/ examples/ index.html learn.json main.min.css main.min.js site-assets/
 						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>production environment - local virtual</h2>
+						<h3>Marco Polo style</h3>
 					</section>
 					<section>
 						<h2>start a virtual machine</h2>
@@ -261,7 +272,7 @@ Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-49-generic x86_64)
 
 ...
 
-vagrant@vagrant-ubuntu-trusty-64:~$
+vagrant@vagrant-ubuntu-trusty-64:~$$
 						</code></pre>
 						<img class="fragment" src="images/inception.gif"/>
 					</section>
@@ -270,17 +281,17 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 					<section>
 						<h2>install nginx</h2>
 						<pre class="fragment"><code data-trim contenteditable>
-$ sudo apt-get update
+$$ sudo apt-get update
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ sudo apt-get install nginx
+$$ sudo apt-get install nginx
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl localhost:80
+$$ curl localhost:80
 &lt;!doctype html>
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ exit
+$$ exit
 logout
 Connection to 127.0.0.1 closed.
 						</code></pre>
@@ -344,18 +355,24 @@ $ curl localhost:8888
 						</code></pre>
 					</section>
 					<section>
-						<h2>let's do that again</h2>
+						<h2>let's do that again <span class="fragment">... and again</span><span class="fragment"> ... and again</span></h2>
 						<img src="images/Tom-Colicchio-WTF-Reaction-Gif-On-Top-Chef.gif"/>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>let's automate then</h2>
+						<h2>production environment - local virtual</h2>
+						<h3>Henry Ford style</h3>
+					</section>
+					<section>
+						<h2>ready to automate?</h2>
 						<img src="images/come-here.gif"/>
-						<pre class="fragment"><code data-trim contenteditable>
-$ vagrant destroy
-						</code></pre>
 					</section>
 					<section>
 						<h2>nginx with puppet</h2>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
+						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant up
 						</code></pre>
@@ -482,6 +499,14 @@ $ curl --silent localhost:8888
 					</section>
 					<section>
 						<h2>let's do that in the cloud</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>production environment - in the cloud</h2>
+					</section>
+					<section>
+						<h2>meet digital ocean</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant destroy
 						</code></pre>
@@ -489,8 +514,12 @@ $ vagrant destroy
 $ vagrant plugin install vagrant-digitalocean
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant plugin install vagrant-puppet-install
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
 Vagrant.configure("2") do |config|
   # ...
+  config.puppet_install.puppet_version = "3.7.3"
   config.vm.provider :digital_ocean do |digital_ocean, override|
     digital_ocean.token = ENV['VAGRANT_DIGITALOCEAN_TOKEN']
     digital_ocean.image = "ubuntu-14-04-x64"
@@ -507,6 +536,12 @@ end
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant up --provider=digital_ocean
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ curl _the_ip_
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ vagrant destroy
 						</code></pre>
 					</section>
 				</section>
