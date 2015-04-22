@@ -10,6 +10,7 @@ fi
 MASTER="$( cd "$( dirname "$0" )" && pwd )"
 
 cd ${GH_PAGES}
+git pull
 git rm -rf *
 cp -rf ${MASTER}/* ${GH_PAGES}
 git add -A
