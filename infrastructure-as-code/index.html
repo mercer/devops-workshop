@@ -59,7 +59,7 @@
 						<h2>install a package manager</h2>
 						<ul>
 							<li><i class="fa fa-windows"></i> <a href="https://chocolatey.org/">chocolatey</a></li>
-							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a></li>
+							<li><i class="fa fa-apple"></i> <a href="http://brew.sh/">Homebrew</a> and <a href="http://caskroom.io/">Cask</a></li>
 						</ul>
 					</section>
 					<section><h2>open a console</h2></section>
@@ -77,6 +77,17 @@
 						<pre><code data-trim contenteditable>
 $ virtualbox --help
 Oracle VM VirtualBox Manager 4.3.24
+						</code></pre>
+					</section>
+					<section>
+						<h2>install curl</h2>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install curl</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install curl</code></pre>
+						<pre><code data-trim contenteditable>
+$ curl --version
+curl 7.30.0 (i386-pc-win32) libcurl/7.30.0 OpenSSL/0.9.8{ zlib/1.2.7
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smtp smtps telnet tftp
+Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM SPNEGO SSL SSPI libz
 						</code></pre>
 					</section>
 					<section>
@@ -126,7 +137,7 @@ $ bower --version
 						<pre><code data-trim contenteditable>$ npm install --global gulp</code></pre>
 						<pre><code data-trim contenteditable>
 $ gulp --version
-1.4.1
+[18:08:14] CLI version 3.8.11
 						</code></pre>
 					</section>
 					<section>
