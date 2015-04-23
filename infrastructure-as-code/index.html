@@ -208,6 +208,7 @@ $ ls dist
 CNAME bower_components/ examples/ index.html learn.json main.min.css main.min.js site-assets/
 						</code></pre>
 					</section>
+					<section><h2>takeaways?</h2></section>
 				</section>
 				<section>
 					<section>
@@ -357,6 +358,7 @@ $ curl localhost:8888
 						<h2>let's do that again <span class="fragment">... and again</span><span class="fragment"> ... and again</span></h2>
 						<img src="images/Tom-Colicchio-WTF-Reaction-Gif-On-Top-Chef.gif"/>
 					</section>
+					<section><h2>takeaways?</h2></section>
 				</section>
 				<section>
 					<section>
@@ -391,10 +393,10 @@ service { "nginx":
 $ vagrant ssh
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ sudo puppet apply /vagrant/manifests/default.pp
+$$ sudo puppet apply /vagrant/manifests/default.pp
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl localhost:80
+$$ curl localhost:80
 						</code></pre>
 					</section>
 					<section>
@@ -408,10 +410,10 @@ file { "/etc/nginx/sites-enabled/default":
 }
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ sudo puppet apply manifests/default.pp
+$$ sudo puppet apply manifests/default.pp
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl localhost:80
+$$ curl localhost:80
 						</code></pre>
 					</section>
 					<section>
@@ -447,7 +449,7 @@ file { "/etc/nginx/sites-enabled/todomvc":
 }
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ sudo puppet apply manifests/default.pp
+$$ sudo puppet apply manifests/default.pp
 						</code></pre>
 					</section>
 					<section>
@@ -496,9 +498,7 @@ $ curl --silent localhost:8888
 						<h2>now you know what provision means</h2>
 						<img src="images/confident.gif"/>
 					</section>
-					<section>
-						<h2>let's do that in the cloud</h2>
-					</section>
+					<section><h2>takeaways?</h2></section>
 				</section>
 				<section>
 					<section>
@@ -508,6 +508,9 @@ $ curl --silent localhost:8888
 						<h2>meet digital ocean</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant destroy
+						</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>
+$ ssh-keygen -t rsa -C "your_email@example.com"
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant plugin install vagrant-digitalocean
