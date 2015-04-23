@@ -212,7 +212,7 @@ CNAME bower_components/ examples/ index.html learn.json main.min.css main.min.js
 				</section>
 				<section>
 					<section>
-						<h2>production environment - local virtual</h2>
+						<h2>virtual production environment</h2>
 						<h3>Marco Polo style</h3>
 					</section>
 					<section>
@@ -362,7 +362,7 @@ $ curl localhost:8888
 				</section>
 				<section>
 					<section>
-						<h2>production environment - local virtual</h2>
+						<h2>virtual production environment</h2>
 						<h3>Henry Ford style</h3>
 					</section>
 					<section>
@@ -502,22 +502,34 @@ $ curl --silent localhost:8888
 				</section>
 				<section>
 					<section>
-						<h2>production environment - in the cloud</h2>
+						<h2>production environment in the cloud</h2>
 					</section>
 					<section>
 						<h2>meet digital ocean</h2>
+					</section>
+					<section>
+						<h2>destroy previous vm</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant destroy
 						</code></pre>
+					</section>
+					<section>
+						<h2>create a ssh key</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ ssh-keygen -t rsa -C "your_email@example.com"
 						</code></pre>
+					</section>
+					<section>
+						<h2>install digitalocean and puppet plugins</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant plugin install vagrant-digitalocean
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant plugin install vagrant-puppet-install
 						</code></pre>
+					</section>
+					<section>
+						<h2>add the digitalocean provider</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 Vagrant.configure("2") do |config|
   # ...
@@ -536,6 +548,9 @@ Vagrant.configure("2") do |config|
   end
 end
 						</code></pre>
+					</section>
+					<section>
+						<h2>give it a spin</h2>
 						<pre class="fragment"><code data-trim contenteditable>
 $ vagrant up --provider=digital_ocean
 						</code></pre>
