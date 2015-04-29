@@ -67,19 +67,22 @@
 						</ul>
 					</section>
 					<section>
-						<h2>install a (good) terminal emulator</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install conemu -y</code></pre>
-						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install iterm2</code></pre>
+						<h2>don't fear <span class="fragment">the command line</span></h2>
 					</section>
 					<section>
-						<h2>install a (good) text editor</h2>
-						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install sublimetext3 -y</code></pre>
-						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew cask install sublime-text3</code></pre>
+						<h2>on windows, run console as administrator</h2>
+					</section>
+					<section>
+						<h2>turn Hyper-V off when using Virtualbox and reboot</h2>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ bcdedit /set hypervisorlaunchtype off</code></pre>
+						<h3>to turn Hyper-V back on</h3>
+						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ bcdedit /set hypervisorlaunchtype auto</code></pre>
 					</section>
 					<section>
 						<h2>install curl</h2>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install curl -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install curl</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install curl</code></pre>
 						<pre><code data-trim contenteditable>
 $ curl --version
 curl 7.30.0 (i386-pc-win32) libcurl/7.30.0 OpenSSL/0.9.8{ zlib/1.2.7
@@ -91,7 +94,7 @@ Features: AsynchDNS GSS-Negotiate IPv6 Largefile NTLM SPNEGO SSL SSPI libz
 						<h2>install git</h2>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install git -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install git</code></pre>
-						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install git</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install git</code></pre>
 						<pre><code data-trim contenteditable>
 $ git --version
 git version 1.9.4.msysgit.2
@@ -100,8 +103,8 @@ git version 1.9.4.msysgit.2
 					<section>
 						<h2>install virtualbox</h2>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install virtualbox -y</code></pre>
-						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install virtualbox</code></pre>
-						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install virtualbox</code></pre>
+						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew cask install virtualbox</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install virtualbox</code></pre>
 						<pre><code data-trim contenteditable>
 $ virtualbox --help
 Oracle VM VirtualBox Manager 4.3.24
@@ -111,7 +114,7 @@ Oracle VM VirtualBox Manager 4.3.24
 						<h2>install vagrant</h2>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install vagrant -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install vagrant</code></pre>
-						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ apt-get install vagrant</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install vagrant</code></pre>
 						<pre><code data-trim contenteditable>
 $ vagrant --version
 Vagrant 1.6.5
@@ -121,7 +124,9 @@ Vagrant 1.6.5
 						<h2>install node.js</h2>
 						<pre><i class="fa fa-windows"></i><code data-trim contenteditable>$ choco install nodejs -y</code></pre>
 						<pre><i class="fa fa-apple"></i><code data-trim contenteditable>$ brew install nodejs</code></pre>
-						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo apt-get install nodejs</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ curl -sL https://deb.nodesource.com/setup | sudo bash -</code></pre>
+						<pre><code data-trim contenteditable>$ sudo apt-get install nodejs</code></pre>
+						<pre><code data-trim contenteditable>$ sudo apt-get install build-essential</code></pre>
 						<pre><code data-trim contenteditable>
 $ node --version
 v0.12.2
@@ -133,7 +138,8 @@ $ npm --version
 					</section>
 					<section>
 						<h2>install bower</h2>
-						<pre><code data-trim contenteditable>$ npm install --global bower</code></pre>
+						<pre><i class="fa fa-windows"></i> <i class="fa fa-apple"></i><code data-trim contenteditable>$ npm install --global bower</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo npm install --global bower</code></pre>
 						<pre><code data-trim contenteditable>
 $ bower --version
 1.4.1
@@ -141,7 +147,8 @@ $ bower --version
 					</section>
 					<section>
 						<h2>install gulp</h2>
-						<pre><code data-trim contenteditable>$ npm install --global gulp</code></pre>
+						<pre><i class="fa fa-windows"></i> <i class="fa fa-apple"></i><code data-trim contenteditable>$ npm install --global gulp</code></pre>
+						<pre><i class="fa fa-linux"></i><code data-trim contenteditable>$ sudo npm install --global gulp</code></pre>
 						<pre><code data-trim contenteditable>
 $ gulp --version
 [18:08:14] CLI version 3.8.11
@@ -149,7 +156,7 @@ $ gulp --version
 					</section>
 					<section>
 						<h2>clone and serve todomvc</h2>
-						<pre class="fragment"><code data-trim contenteditable>$ git clone git@github.com:tastejs/todomvc.git</code></pre>
+						<pre class="fragment"><code data-trim contenteditable>$ git clone https://github.com/tastejs/todomvc.git</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>$ cd todomvc</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>$ npm install</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>$ bower install</code></pre>
@@ -160,21 +167,21 @@ $ gulp serve
 [08:05:18] Finished 'serve' after 3.28 ms
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8888
+$ curl --silent localhost:8000
 &lt;!doctype html>
 ...
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8888 | awk 'NR == 1'
+$ curl --silent localhost:8000 | awk 'NR == 1'
 &lt;!doctype html>
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8888 | sed '1q;d'
+$ curl --silent localhost:8000 | sed '1q;d'
 &lt;!doctype html>
 
 						</code></pre>
 						<pre class="fragment"><code data-trim contenteditable>
-$ curl --silent localhost:8888 | perl -ne 'print if $. == 1'
+$ curl --silent localhost:8000 | perl -ne 'print if $. == 1'
 &lt;!doctype html>
 
 						</code></pre>
