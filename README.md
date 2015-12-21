@@ -1,7 +1,7 @@
 # DevOps: Awareness Workshop
 
 ## Values and Principles
-- see slides
+- [slides](https://mercer.github.io/devops-workshop/slides/)
 
 ## Practices
 - Continuous Delivery
@@ -11,7 +11,7 @@
 - https://www.youtube.com/watch?v=aoMfbgF2D_4
 
 ### Infrastructure as Code
-- https://www.youtube.com/watch?v=E-3fNwPY_mE
+- https://www.youtube.com/watch?v=LKENuz-DKTg
 
 ## OMG Tools!!!
 - Release management
