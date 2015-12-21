@@ -10,7 +10,7 @@
 ### Continuous Delivery
 - https://www.youtube.com/watch?v=aoMfbgF2D_4
 
-### Infrastrucutre as Code
+### Infrastructure as Code
 - https://www.youtube.com/watch?v=E-3fNwPY_mE
 
 ## OMG Tools!!!
