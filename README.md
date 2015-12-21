@@ -3,6 +3,9 @@
 ## Values and Principles
 - [slides](https://mercer.github.io/devops-workshop/slides/)
 
+## Methods
+- Kanban, [Visible Ops](http://www.realgenekim.me/visible-ops/)
+
 ## Practices
 - Continuous Delivery
 - Infrastructure as Code
