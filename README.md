@@ -9,8 +9,9 @@ You're a dev, ops or qa and have little knowledge of DevOps. You want to learn m
 - Target audience for this workshop are devs, ops or qa that have little or no exposure to DevOps and want to learn more. 
 - There are no requirements about previous knowledge. 
 - The draft presentations are on github [1] and the board is on trello [2]. 
-- Participants need a laptop 
-- The location needs at least 30 Mbps internet speed. 
+- Participants need a laptop with linux.
+- The location needs at least 30 Mbps internet speed.
+- At the location, we need self-sticking flipchart paper, postits, markers, pens, paper.
 - Audience size should be of 6-16.
 
 ### Assumptions about the audience
