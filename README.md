@@ -1,5 +1,39 @@
 # DevOps: Awareness Workshop
 
+## Join us on the "DevOps Awareness" workshop
+
+You're a dev, ops or qa and have little knowledge of DevOps. You want to learn more. Join us with a linux laptop for a two day workshop. You'll explore Infrastructure as Code, Continuous Delivery, Monitoring, Metrics and Diagnostics. You'll gain awareness about DevOps, knowledge in techniques and inspiration to bring ideas to your team.
+
+### Workshop coordinates
+
+- Target audience for this workshop are devs, ops or qa that have little or no exposure to DevOps and want to learn more. 
+- There are no requirements about previous knowledge. 
+- The draft presentations are on github [1] and the board is on trello [2]. 
+- Participants need a laptop 
+- The location needs at least 30 Mbps internet speed. 
+- Audience size should be of 6-16.
+
+### Assumptions about the audience
+
+- is mostly coming from a developer background, so less knowledge of business and ops, but can also be ops or QA folks
+- has mixed experience with different operating systems, windows/linux/mac, but is mainly proficient in windows
+- has a spectrum of exposure to automation
+- practices continuous build to some extent 
+- uses (some) feedback from the build
+- writes (some) unit tests
+- knows about other test flavors, such as integration tests
+- practices continuous integration to some extent
+- is intermediate user of source control
+
+The approach is to start from ideas, and then have practical exercises about some techniques, technologies and tools that could be applied. The scope is breadth rather than depth. 
+
+### Main takeaways
+
+- Awareness on DevOps motivations, goals and current status
+- Awareness and possible infection with the DevOps mindset
+- Knowledge about a number of techniques, technologies and tools
+- Inspiration to go back to your projects and apply some of these ideas
+
 ## Values and Principles
 - [slides](https://mercer.github.io/devops-workshop/slides/)
 
